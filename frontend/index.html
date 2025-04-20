@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>e-commerce</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1><a href="index.html">
+          <img class="img-logo" src="./images/efrei.png" alt="logo sneakers" align="left" width="10%">
+        </a>   
+      🛒 E-commerce</h1>
+    <nav>
+      <button class="tablink" onclick="showTab('accueil')">Accueil</button>
+      <button class="tablink" onclick="showTab('produits')">Produits</button>
+      <button class="tablink" onclick="showTab('commande')">Nouvelle commande</button>     
+    </nav>
+  </header>
+
+  <main>
+    <section id="accueil" class="tab-content">
+      <div class="welcome-section">
+        <div class="left">
+          <h2>Bienvenue sur notre site e-commerce</h2>
+          <p>Votre boutique tech préférée. Explorez des produits uniques conçus pour les passionnés de technologie !</p>
+          <p>Veuillez cliquer sur "Produits" pour voir la liste des produits</p>
+        </div>
+        <div class="right">
+          <h2>Commandes existantes</h2>
+          <div id="orders"></div>  
+          <button id="clearOrdersBtn" onclick="clearAllOrders()">Vider toutes les commandes</button>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="produits" class="tab-content" style="display:none">
+      <h2 align="center">Produits
+      <input type="text" id="searchBar" placeholder="Rechercher un produit..." oninput="filterProducts()"></h2>
+
+      <div id="products" class="product-grid"></div>
+    </section>
+
+    <section id="commande" class="tab-content" style="display:none">
+      <h2>Nouvelle commande</h2>
+      <form id="orderForm">
+        <label>Nom du produit * :
+          <input type="text" id="productName" required>
+        </label><br>
+        <label>Quantité *:
+          <input type="number" id="quantity" required>
+        </label><br>
+        <label>Email client *:
+          <input type="email" id="clientEmail" required>
+        </label><br>
+        <button id="submitOrderBtn" type="submit">Commander</button>
+        <h6>* les champs sont obligatoires</h6>
+      </form>
+    </section>
+    
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

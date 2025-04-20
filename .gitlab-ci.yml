@@ -1,0 +1,17 @@
+stages:
+  - build
+  - deploy
+
+build:
+  stage: build
+  script:
+    - docker build -t product-service .
+    - docker build -t order-service .
+    - docker push product-service
+    - docker push order-service
+
+deploy:
+  stage: deploy
+  script:
+    - kubectl apply -f product-service/k8s/deployment.yaml
+    - kubectl apply -f order-service/k8s/deployment.yaml
