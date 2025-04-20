@@ -164,4 +164,4 @@ deploy:
 
  ## Lien vers le dépôt Git
 
-Le code source complet du projet est disponible sur GitLab :  
+Le code source complet du projet est disponible sur GitLab :  https://github.com/Kelyan1305/Projet_Devops_docker.git
